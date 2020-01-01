@@ -11,9 +11,10 @@
 # Email: jjames@decisionscients.com                                           #
 # ---------------                                                             #
 # Create Date: Tuesday December 31st 2019, 7:06:22 pm                         #
-# Last Modified: Tuesday December 31st 2019, 7:08:26 pm                       #
+# Last Modified: Wednesday January 1st 2020, 2:10:23 am                       #
 # Modified By: John James (jjames@decisionscients.com)                        #
 # ---------------                                                             #
 # License: Modified BSD                                                       #
-# Copyright (c) 2019 Decision Scients                                         #
+# Copyright (c) 2020 Decision Scients                                         #
 # =========================================================================== #
+

@@ -11,7 +11,7 @@
 # Email: jjames@decisionscients.com                                           #
 # ---------------                                                             #
 # Create Date: Tuesday December 31st 2019, 3:07:42 pm                         #
-# Last Modified: Tuesday December 31st 2019, 7:05:21 pm                       #
+# Last Modified: Wednesday January 1st 2020, 2:53:24 am                       #
 # Modified By: John James (jjames@decisionscients.com)                        #
 # ---------------                                                             #
 # License: Modified BSD                                                       #
@@ -44,7 +44,7 @@ class Borg:
     def __init__(self):
         self.__dict__ = self._shared_state
 
-class Canvas(Borg):
+class Canvas:
     """Class that contains the plotting parameters and defaults.
     
     Plotly plots are comprised of data and layout components. The data 
@@ -176,7 +176,6 @@ class CanvasComponent(ABC):
     outer dictionary is the parameter name and 
     
     """
-
     @abstractmethod
     def __init__(self):
         # Designate unique/opaque userid and other metadata      
@@ -185,28 +184,6 @@ class CanvasComponent(ABC):
         self._creator = getpass.getuser()        
 
         self._parameters = {}
-
-    def __getattr__(self, name):
-        """Returns the value of the named attribute."""
-        try:
-            definition = self._parameters[name]
-        except(Exception) as e:
-            print(e)
-        else:
-            parameter = {}
-            parameter[name] = definition['value']
-        return parameter
-
-    def __setattr__(self,name, value):
-        """Sets the value of the named attribute."""
-        try:
-            definition = self._parameters[name]
-        except(Exception) as e:
-            print(e)
-        else:
-            definition['value'] = value
-            self._parameters[name] = definition
-        return self
 
     def get_parameters(self):
         """Returns all parameters as key/value pairs."""
@@ -220,12 +197,12 @@ class CanvasComponent(ABC):
     def _get_attribute(self, name, attribute):
         try:
             definition = self._parameters[name]
-        except(Exception) as e:
+        except(AttributeError) as e:
             print(e)
 
         try:
             value = definition[attribute]
-        except(Exception) as e:
+        except(AttributeError) as e:
             print(e)
         return value
 
@@ -251,17 +228,21 @@ class CanvasComponent(ABC):
         """Returns the Plotly name for the named attribute."""
         return self._get_attribute(name, 'type')
 
+    def get_description(self, name):
+        """Returns the description for the named property."""
+        return self._get_attribute(name, 'description')
+
     def get_allowed_values(self, name):
         """Returns the Plotly name for the named attribute."""
-        return self._get_attribute(name, 'allowed_values')
+        return self._get_attribute(name, 'allowed')
 
     def get_min_value(self, name):
         """Returns the Plotly name for the named attribute."""
-        return self._get_attribute(name, 'min_value')
+        return self._get_attribute(name, 'min')
 
     def get_max_value(self, name):
         """Returns the Plotly name for the named attribute."""
-        return self._get_attribute(name, 'max_value')
+        return self._get_attribute(name, 'max')
 
     def get_parameter(self, name):
         """Returns the value of the named parameter."""
