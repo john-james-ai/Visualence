@@ -11,7 +11,7 @@
 # Email: jjames@decisionscients.com                                           #
 # ---------------                                                             #
 # Create Date: Tuesday December 31st 2019, 3:06:33 pm                         #
-# Last Modified: Wednesday January 1st 2020, 2:46:29 am                       #
+# Last Modified: Wednesday January 1st 2020, 5:53:21 am                       #
 # Modified By: John James (jjames@decisionscients.com)                        #
 # ---------------                                                             #
 # License: Modified BSD                                                       #
@@ -58,7 +58,16 @@ class CanvasTitle(CanvasComponent):
             'max' : None,
             'regex' : None,
             'default' : "",
-            'value':""
+            'value':"",
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }
     def _reset_title_font_family(self):
         self._parameters['title_font_family'] = {
@@ -71,8 +80,17 @@ class CanvasTitle(CanvasComponent):
             'max' : None,
             'regex' : None,
             'default' : "Open Sans",
-            'value':['Open Sans', 'Balto']
-        }        
+            'value':['Open Sans', 'Balto'],
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
+        }
 
     def _reset_title_font_size(self):
         self._parameters['title_font_size'] = {
@@ -85,7 +103,16 @@ class CanvasTitle(CanvasComponent):
             'max' : None,
             'regex' : None,
             'default' : None,
-            'value': None
+            'value': None,
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }        
     def _reset_title_font_color(self):
         self._parameters['title_font_color'] = {
@@ -100,7 +127,16 @@ class CanvasTitle(CanvasComponent):
                        're.compile(r"(rgb|hsl|hsv)a?\\([\\d.]+%?(,[\\d.]+%?){2,3}\\)")',
                        're.compile(r"var\\(\\-\\-.*\\)")'],
             'default' : None,
-            'value': None
+            'value': None,
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }        
 
     def _reset_title_xref(self):
@@ -114,7 +150,16 @@ class CanvasTitle(CanvasComponent):
             'max' : None,
             'regex' : None,
             'default' : 'container',
-            'value': 'container'
+            'value': 'container',
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }                
  
     def _reset_title_yref(self):
@@ -128,7 +173,16 @@ class CanvasTitle(CanvasComponent):
             'max' : None,
             'regex' : None,
             'default' : 'container',
-            'value': 'container'
+            'value': 'container',
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }                        
 
     def _reset_title_x(self):
@@ -142,7 +196,16 @@ class CanvasTitle(CanvasComponent):
             'max' : 1,
             'regex' : None,
             'default' : 0.5,
-            'value': 0.5
+            'value': 0.5,
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }        
 
     def _reset_title_y(self):
@@ -156,7 +219,16 @@ class CanvasTitle(CanvasComponent):
             'max' : 1,
             'regex' : None,
             'default' : 0.5,
-            'value': 0.5
+            'value': 0.5,
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }         
 
     def _reset_title_xanchor(self):
@@ -170,7 +242,16 @@ class CanvasTitle(CanvasComponent):
             'max' : None,
             'regex' : None,
             'default' : "auto",
-            'value': "auto"
+            'value': "auto",
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }              
 
     def _reset_title_yanchor(self):
@@ -184,7 +265,16 @@ class CanvasTitle(CanvasComponent):
             'max' : None,
             'regex' : None,
             'default' : "auto",
-            'value': "auto"
+            'value': "auto",
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }   
 
     def _reset_title_pad_top(self):
@@ -198,7 +288,16 @@ class CanvasTitle(CanvasComponent):
             'max' : None,
             'regex' : None,
             'default' : 0,
-            'value': 0
+            'value': 0,
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }   
 
     def _reset_title_pad_bottom(self):
@@ -212,7 +311,16 @@ class CanvasTitle(CanvasComponent):
             'max' : None,
             'regex' : None,
             'default' : 0,
-            'value': 0
+            'value': 0,
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
         }           
 
     def _reset_title_pad_left(self):
@@ -226,5 +334,14 @@ class CanvasTitle(CanvasComponent):
             'max' : None,
             'regex' : None,
             'default' : 0,
-            'value': 0
-        }            
+            'value': 0,
+            'validation' : {
+                'logical' : 'all',
+                'rules' : [
+                    {
+                        'a' : None,
+                        'b' : None,
+                        'operator' : None
+                    }
+                ]
+        }

@@ -11,13 +11,14 @@
 # Email: jjames@decisionscients.com                                           #
 # ---------------                                                             #
 # Create Date: Tuesday December 31st 2019, 3:07:42 pm                         #
-# Last Modified: Wednesday January 1st 2020, 2:53:24 am                       #
+# Last Modified: Wednesday January 1st 2020, 6:14:43 am                       #
 # Modified By: John James (jjames@decisionscients.com)                        #
 # ---------------                                                             #
 # License: Modified BSD                                                       #
 # Copyright (c) 2019 Decision Scients                                         #
 # =========================================================================== #
-"""
+"""Canvas and the CanvasComponent abstract base class. 
+
 Plotly plots are comprised primarily of two constituents: a data constituent
 and a layout constituent. The data constituent specifies 'what' will be 
 plotted; whereas, the layout constituent defines 'how' the data will be 
@@ -255,6 +256,15 @@ class CanvasComponent(ABC):
     def get_default_value(self, name):
         """Returns the value of the named attribute."""
         return self._get_attribute(name, 'default')
+
+    def add_validation_rule_set(self, name, rule_set):
+        """Adds a validation rule set object to a property."""
+        try:
+            self._parameters[name]['validation_rule_set'] = rule_set
+        except(AttributeError) as e:
+            print(e)
+        return self
+
 
     def print_parameters(self, name=None):
         """Prints all parameters or the named parameter if so designated."""
