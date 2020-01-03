@@ -11,7 +11,7 @@
 # Email: jjames@decisionscients.com                                           #
 # ---------------                                                             #
 # Create Date: Tuesday December 31st 2019, 7:10:30 pm                         #
-# Last Modified: Wednesday January 1st 2020, 2:39:34 am                       #
+# Last Modified: Wednesday January 1st 2020, 12:28:09 pm                      #
 # Modified By: John James (jjames@decisionscients.com)                        #
 # ---------------                                                             #
 # License: Modified BSD                                                       #
@@ -32,7 +32,7 @@ class CanvasTitleTests:
     @mark.canvas_title_text_reset_getters_setters
     def test_canvas_title_text_reset_getters_setters(self):
         canvas = CanvasTitle()
-        assert canvas.get_parameter('title_text') == '', "Title text not working."
+        assert canvas.get_parameter_value('title_text') == '', "Title text not working."
         assert canvas.get_plotly_name('title_text') == 'text', "Plotly parent get/set not working."
         assert canvas.get_plotly_parent('title_text') == 'layout.title', "Plotly parent get/set not working."
         assert canvas.get_type('title_text') == str, "Type not returned."
@@ -41,8 +41,9 @@ class CanvasTitleTests:
         assert canvas.get_min_value('title_text') is None, "Min value not returned."
         assert canvas.get_max_value('title_text') is None, "Max not returned."
         assert canvas.get_default_value('title_text') == "", "Default value not returned."
-        canvas.set_parameter('title_text', "Another title")
-        assert canvas.get_parameter('title_text') == "Another title", "set_parameter is not working"
+        canvas.set_parameter_value('title_text', "Another title")
+        assert canvas.get_parameter_value('title_text') == "Another title", "set_parameter is not working"
+        assert canvas.get_attribute('title_x', 'max') == 1, "Get attribute is not working."
 
 
 
