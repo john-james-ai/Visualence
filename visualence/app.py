@@ -11,7 +11,7 @@
 # Email: jjames@decisionscients.com                                           #
 # ---------------                                                             #
 # Create Date: Friday January 3rd 2020, 1:55:36 am                            #
-# Last Modified: Friday January 3rd 2020, 3:25:59 pm                          #
+# Last Modified: Saturday January 4th 2020, 8:22:06 am                        #
 # Modified By: John James (jjames@decisionscients.com)                        #
 # ---------------                                                             #
 # License: Modified BSD                                                       #
@@ -54,23 +54,64 @@ def build_tabs():
         children=[
             dcc.Tabs(
                 id="app-tabs",
-                value="tab2",
+                value="tab1",
                 className="custom-tabs",
                 children=[
                     dcc.Tab(
-                        id="Specs-tab",
-                        label="Specification Settings",
+                        id="Projects-tab",
+                        label="Projects",
                         value="tab1",
                         className="custom-tab",
                         selected_className="custom-tab--selected",
                     ),
                     dcc.Tab(
-                        id="Control-chart-tab",
-                        label="Control Charts Dashboard",
+                        id="Data-tab",
+                        label="Data",
                         value="tab2",
                         className="custom-tab",
                         selected_className="custom-tab--selected",
                     ),
+                    dcc.Tab(
+                        id="Analysis-tab",
+                        label="Exploratory Data Analysis",
+                        value="tab3",
+                        className="custom-tab",
+                        selected_className="custom-tab--selected",
+                    ),
+                    dcc.Tab(
+                        id="Feature-selection-tab",
+                        label="Feature Selection",
+                        value="tab4",
+                        className="custom-tab",
+                        selected_className="custom-tab--selected",
+                    ),             
+                    dcc.Tab(
+                        id="Feature-engineering-tab",
+                        label="Feature Engineering",
+                        value="tab5",
+                        className="custom-tab",
+                        selected_className="custom-tab--selected",
+                    ),             
+                    dcc.Tab(
+                        id="Model-selection-tab",
+                        label="Model Selection",
+                        value="tab6",
+                        className="custom-tab",
+                        selected_className="custom-tab--selected",
+                    ),             
+                    dcc.Tab(
+                        id="Model-diagnosis-tab",
+                        label="Model Diagnosis",
+                        value="tab7",
+                        className="custom-tab",
+                        selected_className="custom-tab--selected",
+                    ),                                                                    dcc.Tab(
+                        id="Model-evaluation-tab",
+                        label="Model Evaluation",
+                        value="tab8",
+                        className="custom-tab",
+                        selected_className="custom-tab--selected",
+                    ),                                       
                 ],
             )
         ],

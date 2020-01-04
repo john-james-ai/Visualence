@@ -142,7 +142,9 @@
     cursor: pointer;
   }
   
-  #Specs-tab.custom-tab, #Control-chart-tab.custom-tab {
+  #Projects-tab.custom-tab,#Data-tab.custom-tab,#Analysis-tab.custom-tab,#Feature-selection-tab.custom-tab,#Feature-engineering-tab.custom-tab,
+  #Model-selection-tab.custom-tab,#Model-diagnosis-tab.custom-tab,#Model-evaluation-tab.custom-tab
+  {
     background-color: #161a28;
     letter-spacing: 1px;
     color: inherit;
@@ -154,18 +156,15 @@
     justify-content: center;
     cursor: pointer;
     height: 18px;
-  }
-  
-  #Specs-tab.custom-tab--selected, #Control-chart-tab.custom-tab--selected {
-    border-bottom: #91dfd2 solid 4px !important;
-  }
-  
-  #Specs-tab.custom-tab {
     margin-right: 3px;
+    margin-left: 3px;
   }
   
-  #Control-chart-tab.custom-tab {
-    margin-left: 3px;
+  #Projects-tab.custom-tab.custom-tab--selected,
+  #Data-tab.custom-tab.custom-tab--selected,
+  #Analysis-tab.custom-tab.custom-tab--selected,#Feature-selection-tab.custom-tab.custom-tab--selected,#Feature-engineering-tab.custom-tab.custom-tab--selected,
+  #Model-selection-tab.custom-tab.custom-tab--selected,#Model-diagnosis-tab.custom-tab.custom-tab--selected,#Model-evaluation-tab.custom-tab.custom-tab--selected {
+    border-bottom: #f39422 solid 4px !important;
   }
   
   .section-banner {
